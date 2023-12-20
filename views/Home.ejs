@@ -1,9 +1,15 @@
 <%- include('./layout/Header') %>
 <%- include('./layout/Navbar') %>
     <div class="showcase">
-        <h1>Home page with <span class="color-text">EJS</span></h1>
-        <p>Application made with Express</p>
-        <!-- <p><%= myVariable %></p>
-        <a href="">Open it</a> -->
-    </div>
+        <h1>Victoria's <span class="color-text">Tasks</span></h1>
+        <div class="add-container">
+            <div class="add">
+                <p>Add Task</p>
+                <a href="/add">ADD</a>
+            </div>
+            <div class="add">
+                <p>Show Tasks</p>
+                <a href="/todo">Show</a>
+            </div>
+         </div>
 <%- include('./layout/Footer') %>

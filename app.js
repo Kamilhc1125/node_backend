@@ -5,11 +5,13 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 const app = express();
-const router = require('./routes/router');
+
+const pageRoute = require('./routes/page');
+const todoRoute = require('./routes/todo');
 
 dotenv.config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 const mongoPassword = process.env.MONGO_PASSWORD;
 const mongoUrl = `mongodb+srv://Kamil_1125:${mongoPassword}@testcluster.w6evlo7.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -40,10 +42,7 @@ app.use(express.static('public'));
 app.use(cors(corsOptions));
 
 // MIDDLEWARE => ROUTER
-app.use('/', router);
+app.use('/', pageRoute);
+app.use('/todo', todoRoute);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
-
-
-
-

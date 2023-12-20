@@ -1,0 +1,17 @@
+<%- include('./layout/Header') %>
+<%- include('./layout/Navbar') %>
+    <div class="showcase">
+        <h1>Victoria's <span class="color-text">Tasks</span></h1>
+        <a href="/" class="back">Back</a>
+    </div>
+    <div class="diary">
+        <% data.forEach((todo) => {%>
+            <div class="diary-container">
+                <h3><%= todo.title %></h3>
+                <p><%= todo.date %></p>
+                <a href="/todo/<%= todo.id %>">More</a>
+            </div>
+        <%}) %>
+    </div>
+
+<%- include('./layout/Footer') %>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const diarySchema = new mongoose.Schema({
+const todoSchema = new mongoose.Schema({
   title: {
     type: String,
     requried: true
@@ -8,11 +8,7 @@ const diarySchema = new mongoose.Schema({
   description: {
     type: String,
     requried: true
-  },
-  date: {
-    type: Date,
-    requried: true
   }
 });
 
-module.exports = mongoose.model('Diary', diarySchema);
+module.exports = mongoose.model('Todo', todoSchema);
